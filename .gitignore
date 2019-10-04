@@ -25,7 +25,6 @@ Makefile*
 *.save
 *.user*
 *.orig
-/dependencies/
 build/
 .idea/*
 */build*/
