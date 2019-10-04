@@ -36,8 +36,7 @@ std::ostream& Value::print(std::ostream& out) const {
     return out;
 }
 
-// leaf
-int parse_int(FILE* file, int depth){
+int parse_int(FILE* file, int){
     DEBUG(std::string(depth , ' ') << "Integer");
 
     int integer_value;
@@ -55,14 +54,13 @@ int parse_int(FILE* file, int depth){
     return integer_value;
 }
 
-std::string parse_bytes(FILE* file, int depth){
+std::string parse_bytes(FILE* file, int){
     DEBUG(std::string(depth , ' ') << "Bytes");
 
     int c = fgetc(file);
     std::string value;
     std::size_t size = 0;
 
-    // parse size
     while (c != ':'){
         value.push_back(char(c));
         c = fgetc(file);

@@ -1,6 +1,9 @@
 #ifndef HYDRAFS_BENCODE_HEADER
 #define HYDRAFS_BENCODE_HEADER
 
+// simple bencode parsing
+// https://en.wikipedia.org/wiki/Bencode
+
 #include <ostream>
 #include <string>
 #include <vector>
@@ -55,6 +58,7 @@ private:
     std::string _string;
     int _integer = 0;
     std::vector<Value> _list;
+    // this should be sorted in lexicographical order
     std::vector<std::pair<std::string, Value>> _dict;
 
 public:
